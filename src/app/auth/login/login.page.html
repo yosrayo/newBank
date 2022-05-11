@@ -1,0 +1,61 @@
+
+
+
+
+  
+
+<ion-content [fullscreen]="true">
+  <ion-label  >
+    <ion-img src="../../assets/imgs/logo.png" style="height: 150px; width: 150px; align-items: center;"  ></ion-img>
+    <ion-text >Welcome Back,</ion-text> 
+    <ion-text >
+      <p>Log In!</p>
+    </ion-text>
+  </ion-label> 
+  
+    <form name="form-signin" (ngSubmit)="f.form.valid && login()" #f="ngForm" novalidate  >
+      <ion-list lines="none" class="ion-margin ion-padding ion-text-center">
+        <ion-item class="ion-margin-vertical">
+          <ion-icon 
+            name="mail-outline" slot="end" color="medium">
+          </ion-icon>
+            <ion-input  class="form-control"
+          id="username" name="username"  
+          placeholder="entrer votre email"  [(ngModel)]="username" required>
+          </ion-input>
+        </ion-item>
+       
+        
+  
+        <ion-item class="ion-margin-vertical">
+          <ion-icon  name="lock-closed-outline" slot="end" color="medium" >
+          </ion-icon>
+         
+          <ion-input 
+          type="password" class="form-control" id="pwd" name="pwd"  placeholder="entrer votre moy de passe"
+          [(ngModel)]="pwd" required  >
+          </ion-input>
+        </ion-item>
+        
+        <ion-row class="ion-margin-vertical">
+          <ion-col size="6" class="alignItems">
+            <div align=left>
+              <ion-checkbox></ion-checkbox>
+              <ion-note>Remember me</ion-note>
+            </div>
+          </ion-col>
+          <ion-col size="6">
+            <div align=right>
+              <ion-note [routerLink]="['/', 'forget-pass']">Forgot password?</ion-note>
+            </div>
+          </ion-col>
+        </ion-row>
+        <ion-button color="primary" shape="round" type="submit">Log In</ion-button>
+        <p class="signup">
+          <ion-note>
+            Not a member yet? <ion-text  color="primary" [routerLink]="['/', 'register']">Sign Up</ion-text>
+          </ion-note>
+        </p>
+      </ion-list>
+    </form>
+  </ion-content>

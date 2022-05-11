@@ -1,0 +1,57 @@
+
+  
+  .profile {
+  
+    img {
+      height: 128px;
+      width: 128px;
+      border-radius: 50%;
+      border: solid 4px #fff;
+      display: inline;
+      box-shadow: 0 0 28px rgba(255,255,255, .65);
+    }
+
+    .container {
+      width: 150px;
+      height: 150px;
+      display: block;
+      margin: 0 auto;
+    }
+    .profile-pic {
+      width: 150px;
+      height: 150px;
+    }
+    .outer {
+      width: 100% !important;
+      height: 100% !important;
+      max-width: 150px !important; /* any size */
+      max-height: 150px !important; /* any size */
+      margin: auto;
+      border-radius: 100%;
+      position: relative;
+      background-size: 150px 150px;
+    }
+    .inner {
+      background-color: #075E54;
+      width: 45px;
+      height: 45px;
+      border-radius: 100%;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .camera-icon {
+      height: 30px;
+      width: 30px;
+      color: white;
+    }
+   
+
+
+}
+#file{
+  display: none;
+}

@@ -1,0 +1,45 @@
+<ion-content [fullscreen]="true">
+
+
+  <ion-label class="welcomeMessage" >
+    <ion-img src="../../assets/imgs/logo.png" style="height: 100px; width: 100px;" align="center" ></ion-img>
+    <ion-text color="light">Welcome Back,</ion-text> 
+    <ion-text >
+      <p>Log In!</p>
+    </ion-text>
+  </ion-label> 
+
+  <form name="form-signin" (ngSubmit)="f.form.valid && reset()" #f="ngForm" novalidate >
+    <ion-list lines="none" class="ion-margin ion-padding ion-text-center">
+       
+      <ion-item class="ion-margin-vertical">
+        <ion-icon 
+          name="person-outline" slot="end" color="medium">
+        </ion-icon>
+          <ion-input  class="form-control"
+        id="username" name="username"  [(ngModel)]="username"
+        placeholder="hhhhh "  required>
+        </ion-input>
+      </ion-item>
+      <ion-item class="ion-margin-vertical">
+        <ion-icon 
+          name="lock-closed-outline" slot="end" color="medium">
+        </ion-icon>
+          <ion-input  class="form-control"
+        id="pwd" name="pwd"  [(ngModel)]="newpass"
+        placeholder="entrer votre nouveau mot de passe "  required>
+        </ion-input>
+      </ion-item>
+     
+    
+
+   
+      <ion-button color="primary" shape="round" type="submit">Confirmer</ion-button>
+      <p class="signup">
+        <ion-note>
+          Not a member yet? <ion-text  color="primary" [routerLink]="['/', 'register']">Sign Up</ion-text>
+        </ion-note>
+      </p>
+    </ion-list>
+  </form>
+</ion-content>

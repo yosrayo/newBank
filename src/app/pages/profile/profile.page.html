@@ -1,0 +1,60 @@
+<ion-content [fullscreen]="true">
+
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+     <ion-menu-button *ngIf="!back"></ion-menu-button>
+     <ion-back-button *ngIf="back" defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button fill="clear" [routerLink]="['/' , 'edite-profile' ]">EDIT</ion-button>
+     </ion-buttons>
+  </ion-toolbar>
+
+  
+  <ion-grid class="main-header"  >
+    <div align="center" class="profile">
+  
+        <img [src]="actif.photo" />
+  
+      <div class="outer">
+        <div class="inner" >
+          <ion-icon class="rond-icon" name="radio-button-on-outline"></ion-icon>
+        </div>
+      </div>
+    </div>
+  </ion-grid>
+
+
+
+  <ion-list lines="full">
+    <ion-item>
+      <ion-label>
+        <ion-text>Nom et prénom</ion-text>
+        <p><ion-text color="dark"> {{actif.first_name}}  {{actif.last_name}}</ion-text></p>
+      </ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>
+        <ion-text>Nom et prénom</ion-text>
+        <p><ion-text color="dark"> {{actif.address}} </ion-text></p>
+      </ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>
+        <ion-text>Votre solde</ion-text>
+        <p><ion-text color="dark"> {{actif.solde}} DT</ion-text></p>
+      </ion-label>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label>
+        <ion-text>ID Paiment</ion-text>
+        <p><ion-text color="dark">{{actif.id_paiement}}</ion-text></p>
+      </ion-label>
+    </ion-item>
+ 
+  
+  </ion-list>
+
+</ion-content>

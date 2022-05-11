@@ -1,0 +1,28 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button *ngIf="!back"></ion-menu-button>
+      <ion-back-button *ngIf="back" defaultHref="/home"></ion-back-button>
+     </ion-buttons>
+   
+  
+  </ion-toolbar>   
+</ion-header>
+
+<ion-content >
+  <div class="cart-items">
+    <ion-card  *ngFor="let i of listAction" >
+      <ion-card-content >
+        <div class="item-info">
+          <p>{{i.amount}}DT</p>
+          <p>{{i.date_action}}</p>
+          <p>{{i.actionType}}</p>
+          <div class="qty-selector">
+            <ion-button fill="outline" slot="end"  (click)="goTo(i)">details</ion-button>
+          </div>
+        </div>
+      </ion-card-content>
+    </ion-card>
+   
+  </div>
+</ion-content>

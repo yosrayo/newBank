@@ -1,0 +1,99 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button *ngIf="back"></ion-menu-button>
+      <ion-back-button *ngIf="!back" defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="profile">
+  <form name="form-signin"  [formGroup]="ngForm" novalidate >
+  <ion-card no-margin>
+    <ion-card-content class="bg-profile" align="center">
+      <div class="container">
+        <div class="outer">
+          <img [src]="currentUser.photo"   >
+          <div class="inner" style="background-color: black;">
+            <label for="file">
+              <ion-icon name="camera" class="camera-icon" ></ion-icon>
+
+            </label>
+          </div>
+
+          <input type="file" id="file" (change)="onFileSelected($event)"/>
+        </div>
+      
+      </div>
+      <h1 class="fw500">{{currentUser.first_name}} {{currentUser.last_name}}</h1>
+      <h2 color="light" margin-bottom>{{currentUser.username}}</h2>
+    </ion-card-content>
+  
+    <ion-grid fixed no-padding>
+      <ion-row>
+        <ion-col size="12" padding>
+
+          <ion-list margin-bottom>
+            <ion-list-header color="light">
+              <ion-label class="fw700">Edit Profile</ion-label>
+            </ion-list-header>
+
+            <ion-item>
+              <ion-label color="dark" position="stacked">First Name:</ion-label>
+              <ion-input inputmode="text" placeholder="Ex..: Joe Doe" formControlName="firstName"  > </ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-label color="dark" position="stacked">Last Name:</ion-label>
+              <ion-input inputmode="text" placeholder="Ex..: Joe Doe" formControlName="lastName"  > </ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-label color="dark" position="stacked">Email:</ion-label>
+              <ion-input inputmode="email" placeholder="Ex.: joe@doe.com" formControlName="mail" ></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-label color="dark" position="stacked">Address:</ion-label>
+              <ion-input inputmode="text" placeholder="Ex.: Abey Road 5"  formControlName="address"></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-label color="dark" position="stacked">phone:</ion-label>
+              <ion-input inputmode="text" placeholder="+216.."  formControlName="phone"></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-label color="dark" position="stacked">Mot de pass:</ion-label>
+              <ion-input type="password" placeholder="*****"  formControlName="pwd"></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-label color="dark">City</ion-label>
+              <ion-select  formControlName="city">
+                <div *ngFor="let item of listCity">
+                  <ion-select-option  value="{{item}}">{{item}}</ion-select-option>
+                </div>
+              </ion-select>
+            </ion-item>
+
+           <!--   <ion-item>
+              <ion-label color="dark">State</ion-label>
+              <ion-select>
+                <ion-select-option value="nes">NY</ion-select-option>
+                <ion-select-option value="n64">CA</ion-select-option>
+                <ion-select-option value="ps">Greater London</ion-select-option>
+                <ion-select-option value="genesis">Paris</ion-select-option>
+                <ion-select-option value="saturn">SP</ion-select-option>
+                <ion-select-option value="snes">Kantō</ion-select-option>
+                <ion-select-option value="snes">Delhi</ion-select-option>
+              </ion-select>
+            </ion-item> --> 
+          </ion-list>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-button size="large" expand="full" color="dark"  (click)="update(currentUser.username)" [disabled]="!ngForm.valid" no-margin>Edit</ion-button>
+  </ion-card>
+  </form>
+</ion-content>

@@ -1,0 +1,166 @@
+
+<ion-content [fullscreen]="true">
+
+
+  <form name="form-signin" (ngSubmit)="f.form.valid && goToo(user)" #f="ngForm" novalidate>
+    <ion-list lines="none" class="ion-margin ion-text-center">
+      <ion-item class="ion-margin-vertical">
+        <ion-icon 
+          name="person-outline" slot="end" color="medium">
+        </ion-icon>
+          <ion-input  class="form-control"
+        id="firstName" name="firstName"  
+        placeholder="entrer votre Nom"  [(ngModel)]="user.firstName"
+         #firstName="ngModel" required>
+        </ion-input>
+      </ion-item>
+     
+      <ion-text 
+        class="ion-text-left"
+        color="danger"
+        *ngIf="f.submitted && !firstName.valid"  >
+        <p class="error">*Nom obligatoir</p>
+      </ion-text>
+      <ion-item class="ion-margin-vertical">
+        <ion-icon 
+          name="person-outline" slot="end" color="medium">
+        </ion-icon>
+        <ion-input  class="form-control"
+          placeholder="Enter Prenom"
+          id="lastName" name="lastName"  
+           [(ngModel)]="user.lastName"
+           #lastName="ngModel" required>
+        </ion-input>
+      </ion-item>
+      <ion-text 
+      class="ion-text-left"
+      color="danger"
+      *ngIf="f.submitted && !lastName.valid"  >
+      <p class="error">*Please enter proper Email Address</p>
+    </ion-text>
+
+
+    <ion-item class="ion-margin-vertical">
+      <ion-icon 
+        name="person-outline" slot="end" color="medium">
+      </ion-icon>
+      <ion-input  class="form-control"
+        placeholder="Enter username"
+        id="username" name="username"  
+         [(ngModel)]="user.username"
+         #username="ngModel" required>
+      </ion-input>
+    </ion-item>
+    <ion-text 
+    class="ion-text-left"
+    color="danger"
+    *ngIf="f.submitted && !username.valid"  >
+    <p class="error">*Please enter proper username</p>
+  </ion-text>
+
+
+    <ion-item class="ion-margin-vertical">
+     
+        <ion-input  class="form-control" type="date"
+      id="birthDate" name="birthDate"  
+      placeholder="entrer votre date de naissance"  [(ngModel)]="user.birthDate"
+       #birthDate="ngModel" required>
+      </ion-input>
+    </ion-item>
+   
+    <ion-text 
+      class="ion-text-left"
+      color="danger"
+      *ngIf="f.submitted && !birthDate.valid"  >
+      <p class="error">*Date de naissance obligatoir</p>
+    </ion-text>
+
+      <ion-item class="ion-margin-vertical">
+        <ion-icon 
+          name="location-outline" slot="end" color="medium">
+        </ion-icon>
+        <ion-input class="form-control"
+          placeholder="Enter votre adresse"
+          name="address"
+          id="address" name="address"  
+        [(ngModel)]="user.address"
+           #address="ngModel" required>
+        </ion-input>
+      </ion-item>
+      <ion-text 
+      class="ion-text-left"
+      color="danger"
+      *ngIf="f.submitted && !address.valid"  >
+      <p class="error">*Please enter proper Email Address</p>
+    </ion-text>
+
+      <ion-item class="ion-margin-vertical">
+        <ion-icon 
+          name="call-outline" slot="end" color="medium">
+        </ion-icon>
+        <ion-input class="form-control"
+          placeholder="Enter telephene"
+          id="phone" name="phone"  
+          [(ngModel)]="user.phone"
+           #phone="ngModel" required>
+        </ion-input>
+      </ion-item>
+      <ion-text 
+      class="ion-text-left"
+      color="danger"
+      *ngIf="f.submitted && !phone.valid"  >
+      <p class="error">*Please enter proper Email Address</p>
+    </ion-text>
+      <ion-item class="ion-margin-vertical">
+        <ion-icon 
+          name="mail-outline" slot="end" color="medium">
+        </ion-icon>
+        <ion-input class="form-control"
+          id="mail" name="mail"  
+          placeholder="entrer votre email"  [(ngModel)]="user.mail"
+           #mail="ngModel" required>
+        </ion-input>
+      </ion-item>
+      <ion-text 
+      class="ion-text-left"
+      color="danger"
+      *ngIf="f.submitted && !mail.valid"  >
+      <p class="error">*Please enter proper Email Address</p>
+    </ion-text>
+
+      <ion-item class="ion-margin-vertical">
+        <ion-icon (click)="onChange()"
+          [name]="isTypePassword ? 'lock-closed-outline' : 'lock-open-outline'" 
+          slot="end" 
+          [color]="isTypePassword ? 'medium' : 'primary'">
+        </ion-icon>
+        <ion-input class="form-control"
+        
+          [type]="isTypePassword ? 'password' : 'text'"
+          placeholder="Enter Password"
+          name="pwd"
+          [(ngModel)]="user.pwd" #pwd="ngModel">
+        </ion-input>
+      </ion-item>
+      <ion-text 
+      class="ion-text-left"
+      color="danger"
+      *ngIf="f.submitted && !pwd.valid"  >
+      <p class="error">*Please enter proper Email Address</p>
+    </ion-text>
+
+      <ion-row class="ion-margin-vertical">
+        <ion-col size="12" class="alignItems">
+          <div align=left>
+            <ion-checkbox></ion-checkbox>
+            <ion-note>I accept the policy and terms</ion-note>
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-button color="primary" expand="full" type="submit" >suivant</ion-button>
+    </ion-list>
+  </form>
+
+
+  
+</ion-content>

@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button *ngIf="!back"></ion-menu-button>
+      <ion-back-button *ngIf="back" defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+
+<ion-content class="center">
+
+ 
+  <ion-button expand="block" (click)="startScan()">
+    Commencer Scanner
+  </ion-button>
+
+  <ion-button expand="full" (click)="reset()" color="warning" *ngIf="scanResult">
+    <ion-icon slot="start" name="refresh"></ion-icon>
+    reset
+  </ion-button>
+  <video #video [hidden]="!scanActive" width="100%"></video>
+  <canvas #canvas hidden></canvas>
+
+  <ion-button expand="full" (click)="stopScan()" color="danger" *ngIf="scanActive">
+    <ion-icon slot="start" name="close"></ion-icon>
+    stop Scan
+  </ion-button>
+  <ion-card *ngIf="scanResult">
+    <ion-card-header>
+      <ion-card-title>
+        QR code
+      </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      {{scanResult}}
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

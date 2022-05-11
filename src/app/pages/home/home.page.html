@@ -1,0 +1,51 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar color="primary">
+    <ion-title class="ion-text-center">
+     Accueil
+    </ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button fill="clear" [routerLink]="['/', 'home', 'profile']">
+        <ion-icon slot="icon-only" name="person-circle"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card class="bg-white">
+ 
+    <ion-label expand="full"  >
+     Votre solde
+    </ion-label>
+  </ion-card>
+
+
+
+</ion-content>
+
+
+
+<ion-tabs>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="home">
+      <ion-icon name="home-outline"></ion-icon>
+      <ion-label> Accueil</ion-label>
+    </ion-tab-button>
+    <ion-tab-button tab="paiment">
+      <ion-icon name="newspaper-outline"></ion-icon>
+      <ion-label> ID paiement</ion-label>
+    </ion-tab-button>
+    <ion-tab-button tab="transaction">
+      <ion-icon name="arrow-redo-circle-outline"></ion-icon>
+      <ion-label> transaction</ion-label>
+    </ion-tab-button>
+    <ion-tab-button tab="scanner">
+      <ion-icon name="scan-circle-outline"></ion-icon>
+      <ion-label> Scanner</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>

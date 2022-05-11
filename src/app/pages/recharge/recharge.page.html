@@ -1,0 +1,140 @@
+<ion-header>
+  <ion-toolbar >
+    <ion-buttons slot="start">
+     <ion-menu-button *ngIf="back"></ion-menu-button>
+     <ion-back-button *ngIf="!back" defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+  
+  </ion-toolbar>
+</ion-header>
+<!--
+<ion-content>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col col-4>
+        <ion-card text-center padding >
+          <h2>1 DT</h2>
+        </ion-card>
+      </ion-col>
+
+      <ion-col col-4>
+        <ion-card text-center padding >
+       
+          <h2>5 DT</h2>
+        </ion-card>
+      </ion-col>
+      <ion-col col-4>
+        <ion-card text-center padding >
+          <h2>2 DT</h2>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-4>
+        <ion-card text-center padding >
+          <h2>10 DT</h2>
+        </ion-card>
+      </ion-col>
+      <ion-col col-4>
+        <ion-card text-center padding >
+          <h2>20 DT</h2>
+        </ion-card>
+      </ion-col>
+      <ion-col col-4>
+        <ion-card text-center padding >
+          <h2>50 DT</h2>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-4>
+        <ion-card text-center  >
+          <h2>Autre</h2>
+        </ion-card>
+      </ion-col>
+    
+    </ion-row>
+  </ion-grid>
+</ion-content>-->
+
+<ion-content class="ion-no-border ion-padding" align="center">
+  <ion-row>
+    <ion-list lines="full">
+      <ion-list-header class="ion-margin">
+        <ion-label>Recharge Telephonique</ion-label>
+      </ion-list-header>
+      <ion-item-group class="ion-margin-horizontal ion-margin-bottom"   >
+        <form [formGroup]="form">
+
+       
+          <ion-item class="ion-margin-vertical">
+            <ion-label color="dark">Operateur</ion-label>
+            <ion-select   formControlName="op"    placeholder="Entrer Operateur" >
+              <ion-select-option value="Orange ">Orange </ion-select-option>
+              <ion-select-option value="Orange ">Orange Telecome </ion-select-option>
+              <ion-select-option value="Ooredoo ">Ooredoo </ion-select-option>
+          
+            </ion-select>
+          </ion-item>
+          <ion-text 
+            class="ion-text-left"
+            color="danger"
+            *ngIf="!form.get('op').valid && form.get('op').touched">
+            <p class="error">*Please enter Username</p>
+          </ion-text>
+
+
+          <div class="ion-margin-vertical">
+            <ion-item>
+              <ion-input 
+                formControlName="phone" 
+                placeholder="Mobile Number" 
+                type="tel"
+                minlength="10"
+                maxlength="10"
+               >
+              </ion-input>
+            </ion-item>
+            <ion-text *ngIf="!form.get('phone').valid && form.get('phone').touched">
+              <ion-text class="error" *ngIf="form.get('phone').hasError('required')" color="danger">
+                * Please enter the Mobile Number
+              </ion-text>
+              <ion-text class="error" *ngIf="form.get('phone').hasError('minlength') 
+                && !form.get('phone').hasError('required')" color="danger">
+                * Please enter a valid Mobile Number
+              </ion-text>
+            </ion-text>
+          </div>
+
+
+          <div class="ion-margin-vertical">
+            <ion-item>
+              <ion-input 
+                formControlName="cout" 
+                placeholder="" 
+                type="tel"
+                minlength="1"
+                maxlength="3"
+               >
+              </ion-input>
+            </ion-item>
+            <ion-text *ngIf="!form.get('cout').valid && form.get('cout').touched">
+              <ion-text class="error" *ngIf="form.get('cout').hasError('required')" color="danger">
+                * Please enter the Mobile Number
+              </ion-text>
+           
+            </ion-text>
+          </div>
+
+
+          <ion-button expand="full" (click)="valider()" >
+            Confirmer
+          </ion-button>
+        </form>
+
+      </ion-item-group>
+    </ion-list>
+  </ion-row>
+
+</ion-content>

@@ -1,0 +1,31 @@
+
+<ion-header>
+  <ion-toolbar >
+    <ion-buttons slot="start">
+     <ion-menu-button *ngIf="!back"></ion-menu-button>
+     <ion-back-button *ngIf="back" defaultHref="/home"></ion-back-button>
+     
+    </ion-buttons>
+  
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-no-border ion-padding center">
+  <ion-item lines="none">
+    <ion-label><b>code:</b></ion-label>
+    <ion-input [(ngModel)]="textToCode" > </ion-input>
+    <ion-icon name="copy-outline" (click)="copy()"></ion-icon>
+  </ion-item>
+
+ 
+  <div class="center" *ngIf="myAngularxQrCode">
+    <qrcode [qrdata]="myAngularxQrCode" ></qrcode>
+  </div>
+<!--  <ion-button color="tertiary" expand="block" (click)="createQRCode()">
+    <ion-icon slot="start" name="create"></ion-icon>
+    Créer un QR Code
+  </ion-button> -->
+
+
+ 
+
+

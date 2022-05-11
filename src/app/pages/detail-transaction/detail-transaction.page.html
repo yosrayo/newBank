@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar color="primary">
+   <ion-buttons slot="start">
+    <ion-menu-button *ngIf="back"></ion-menu-button>
+    <ion-back-button *ngIf="!back" defaultHref="/home"></ion-back-button>
+   </ion-buttons>
+
+ </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen="true" >
+ <h1 class="title" align="center">Detail transaction</h1>
+ <div class="cart-total">
+   <ion-item lines="none">
+     <ion-label>Type</ion-label>
+     <ion-label slot="end" class="ion-text-right">{{act.action.date_action}}</ion-label>
+   </ion-item>
+
+   <ion-item lines="none">
+     <ion-label>Date</ion-label>
+     <ion-label slot="end" class="ion-text-right">{{act.action.action_type}}</ion-label>
+   </ion-item>
+   <ion-item>
+     <ion-label>Cout</ion-label>
+     <ion-label slot="end" class="ion-text-right">{{act.action.amount}}DT</ion-label>
+   </ion-item>
+
+ </div>
+
+</ion-content>

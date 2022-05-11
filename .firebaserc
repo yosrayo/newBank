@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "bank-986ce"
+  },
+  "targets": {
+    "bank-986ce": {
+      "hosting": {
+        "app": [
+          "bank-986ce"
+        ]
+      }
+    }
+  }
+}
