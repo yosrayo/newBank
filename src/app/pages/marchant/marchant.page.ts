@@ -69,7 +69,7 @@ export class MarchantPage implements OnInit {
           text: 'Confirmer',
           handler: () => {
             this.action.reference=this.referance;
-            this.action.actionType="Paiement_MARCHAND";
+            this.action.action_type="Paiement_MARCHAND";
             this.action.amount=this.amount;
           this.actionService.add(this.id,this.referance,this.action)
             .subscribe(

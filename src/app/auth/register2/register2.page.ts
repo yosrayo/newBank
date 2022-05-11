@@ -36,33 +36,6 @@ export class Register2Page implements OnInit {
   }
 
 
-  registerUser() {
- 
-    this.userService.create(this.data2)
-    .subscribe(
-      res => {
-       // this.route.navigate(['/register3']);
-        alert("ajouter avec succés");
-      },
-      err => console.log(err)
-    );
-
-    
-    
-  }
-
-
-  goTo(user : User ) {
-    let navigationExtras: NavigationExtras = {
-      state: {
-       user
-      } ,
-     
-    };
-   this.navCtrl.navigateForward(['register3'], navigationExtras);
-  }
-
-
   goToo(user)
   {    this.share.sendFromRegister2(user)
     this.route.navigate(['/register3']);

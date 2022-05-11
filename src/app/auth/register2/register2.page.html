@@ -39,7 +39,7 @@
       <ion-item class="ion-margin-vertical">
         <ion-label color="dark">Type compte</ion-label>
         <ion-select   placeholder="Entrez bank" id="accountType" name="accountType"  
-        placeholder="entrer votre Nom"  [(ngModel)]="user.accountType"
+        placeholder="entrer votre Nom"  [(ngModel)]="user.account_type"
          #accountType="ngModel" required    placeholder="Enter ville" >
           <ion-select-option value="courant ">Courant </ion-select-option>
           <ion-select-option value="Epargne ">Epargne </ion-select-option>
@@ -58,10 +58,10 @@
       <ion-item class="ion-margin-vertical">
         <ion-label color="dark">Type de travail</ion-label>
         <ion-select    placeholder="Entrez bank" id="city" name="workType"  
-        placeholder="entrer votre Nom"  [(ngModel)]="user.workType"
+        placeholder="entrer votre Nom"  [(ngModel)]="user.work_type"
          #workType="ngModel" required     placeholder="Enter ville" >
-          <ion-select-option value="courant ">public </ion-select-option>
-          <ion-select-option value="Epargne ">privé </ion-select-option>
+          <ion-select-option value="public ">public </ion-select-option>
+          <ion-select-option value="privé ">privé </ion-select-option>
       
         </ion-select>
       </ion-item>
@@ -72,23 +72,7 @@
       <p class="error">*Nom obligatoir</p>
     </ion-text>
 
-     <!-- <ion-item class="ion-margin-vertical">
-        <ion-label color="dark">Type d'identifier </ion-label>
-        <ion-select    placeholder="Entrez bank" id="city" name="city"  
-        placeholder="entrer votre Nom"  [(ngModel)]="user.city"
-         #city="ngModel" required     placeholder="Enter ville" >
-          <ion-select-option value="courant "> Carte d’identité national  </ion-select-option>
-          <ion-select-option value="Epargne ">Passeport </ion-select-option>
-      
-        </ion-select>
-      </ion-item>
-      <ion-text 
-      class="ion-text-left"
-      color="danger"
-      *ngIf="f.submitted && !city.valid"  >
-      <p class="error">*Nom obligatoir</p>
-    </ion-text>
--->
+
   
 
 

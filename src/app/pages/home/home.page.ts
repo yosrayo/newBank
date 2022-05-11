@@ -14,12 +14,12 @@ export class HomePage implements OnInit {
   donors: any[] = [];
   lineChart: any;
   newHeight = 0;
-
+  actif = {} as any ;
   constructor() {}
 
   ngOnInit() {
     console.log('ngOnInit');
-  
+    this.actif = JSON.parse(localStorage.getItem('user'));
 
   }
 

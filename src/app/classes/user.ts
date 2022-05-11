@@ -303,9 +303,9 @@ enum AccountType{
 export class User {
      id : number;
 	 userName: string ;
-    firstName: string;
-    lastName : string;
-    birthDate : Date;
+    first_name: string;
+    last_name : string;
+    birth_date : Date;
     address : string;
     phone : number ;
     mail : string;
@@ -314,8 +314,8 @@ export class User {
     solde : number;
     governorate : string ;
     city : string;
-    workType : string;
-    accountType : string;
+    work_type : string;
+    account_type : string;
 	idPaiement : number;
 	bank : string;
 	photo : string;

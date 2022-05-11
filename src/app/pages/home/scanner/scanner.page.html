@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-buttons slot="start">
       <ion-menu-button *ngIf="!back"></ion-menu-button>
       <ion-back-button *ngIf="back" defaultHref="/home"></ion-back-button>
@@ -9,33 +9,45 @@
 
 
 
-<ion-content class="center">
+<ion-content class="center" class="ion-no-border ion-padding center">
 
- 
-  <ion-button expand="block" (click)="startScan()">
-    Commencer Scanner
-  </ion-button>
 
-  <ion-button expand="full" (click)="reset()" color="warning" *ngIf="scanResult">
-    <ion-icon slot="start" name="refresh"></ion-icon>
-    reset
-  </ion-button>
-  <video #video [hidden]="!scanActive" width="100%"></video>
-  <canvas #canvas hidden></canvas>
-
-  <ion-button expand="full" (click)="stopScan()" color="danger" *ngIf="scanActive">
-    <ion-icon slot="start" name="close"></ion-icon>
-    stop Scan
-  </ion-button>
-  <ion-card *ngIf="scanResult">
+  <ion-card align="center" style="    margin: 200px auto;
+  float: none;
+  margin-bottom: 24px;
+">
     <ion-card-header>
-      <ion-card-title>
-        QR code
-      </ion-card-title>
+      <ion-card-title align="center">ID Paiement</ion-card-title>
     </ion-card-header>
     <ion-card-content>
-      {{scanResult}}
+      Si vous voulez scanner un QR Code
     </ion-card-content>
-  </ion-card>
+    <ion-button expand="block" (click)="startScan()">
+      Commencer Scanner
+      <ion-icon name="scan-outline"></ion-icon>
 
+    </ion-button>
+
+    <ion-button expand="full" (click)="reset()" color="warning" *ngIf="scanResult">
+      <ion-icon slot="start" name="refresh"></ion-icon>
+      reset
+    </ion-button>
+    <video #video [hidden]="!scanActive" width="100%"></video>
+    <canvas #canvas hidden></canvas>
+
+    <ion-button expand="full" (click)="stopScan()" color="danger" *ngIf="scanActive">
+      <ion-icon slot="start" name="close"></ion-icon>
+      stop Scan
+    </ion-button>
+    <ion-card *ngIf="scanResult">
+      <ion-card-header>
+        <ion-card-title>
+          QR code
+        </ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        {{scanResult}}
+      </ion-card-content>
+    </ion-card>
+  </ion-card>
 </ion-content>

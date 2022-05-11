@@ -14,13 +14,10 @@
   <ion-grid class="main-header"  >
     <div align="center" class="profile">
   
-        <img [src]="actif.photo" />
+        <img [src]="actif.photo" *ngIf="actif.photo"/>
+        <img src="../../assets/imgs/2.png" *ngIf="!actif.photo" />
+        <ion-icon class="rond-icon" name="radio-button-on-outline"></ion-icon>
   
-      <div class="outer">
-        <div class="inner" >
-          <ion-icon class="rond-icon" name="radio-button-on-outline"></ion-icon>
-        </div>
-      </div>
     </div>
   </ion-grid>
 

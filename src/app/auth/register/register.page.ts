@@ -14,7 +14,28 @@ export class RegisterPage implements OnInit {
   signupForm: FormGroup;
   isTypePassword: boolean = true;
   user: User = new User();
-
+  listCity=[ "Tunis",
+  "Le_Bardo",
+  "Le_Kram",
+  "La_Goulette",
+  "Carthage",
+  "Sidi_Bou_Said",
+  "La_Marsa",
+  "Sidi_Hassine",
+  "Ariana",
+  "La_Soukra",
+  "Raoued",
+  "Kalaat_el_Andalous",
+  "Sidi_Thabet",
+  "Ettadhamen_Mnihla",
+  "Ben_Arous",
+  "El_Mourouj",
+  "Hammam_Lif",
+  "Hammam_Chott",
+  "Bou_Mhel_el_Bassatine",
+  "Ezzahra",
+  "Rades",
+  "Megrine",]
   constructor(private userService: UserService, 
     private route: Router ,
     public navCtrl: NavController,

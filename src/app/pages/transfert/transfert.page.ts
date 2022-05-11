@@ -26,6 +26,7 @@ export class TransfertPage implements OnInit {
     this.actif = JSON.parse(localStorage.getItem('user'));
     this.id = this.actif.id_user
     this.sld = this.actif.solde
+    console.log("solde", this.sld)
 
     const data = this.router.url.split('/');
     console.log(data);
@@ -56,7 +57,12 @@ export class TransfertPage implements OnInit {
           text: 'Confirmer',
           handler: () => {
             console.log("tttttttttt", this.montant)
-            this.montant.actionType= "Virement_BANCAIRE"
+        
+            if (this.amount> this.sld){
+              console.log("hfhhfhhh")
+
+            }else{
+              this.montant.action_type= "Virement_BANCAIRE"
             this.actionService.sendMoney( this.id,this.idPaiement,this.montant)
             .subscribe(
               res => {
@@ -64,11 +70,13 @@ export class TransfertPage implements OnInit {
               },
               err => console.log(err)
             );
-          },
+           } },
+        
         },
       ],
     });
-
+  
     await alert.present();
+  
   }
 }

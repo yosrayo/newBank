@@ -13,8 +13,8 @@
     <ion-card-content class="bg-profile" align="center">
       <div class="container">
         <div class="outer">
-          <img [src]="currentUser.photo"   >
-          <div class="inner" style="background-color: black;">
+          <img [src]="currentUser.photo" *ngIf="currentUser.photo"/>
+          <img src="../../assets/imgs/2.png" *ngIf="!currentUser.photo" />          <div class="inner" style="background-color: black;">
             <label for="file">
               <ion-icon name="camera" class="camera-icon" ></ion-icon>
 
@@ -76,19 +76,6 @@
                 </div>
               </ion-select>
             </ion-item>
-
-           <!--   <ion-item>
-              <ion-label color="dark">State</ion-label>
-              <ion-select>
-                <ion-select-option value="nes">NY</ion-select-option>
-                <ion-select-option value="n64">CA</ion-select-option>
-                <ion-select-option value="ps">Greater London</ion-select-option>
-                <ion-select-option value="genesis">Paris</ion-select-option>
-                <ion-select-option value="saturn">SP</ion-select-option>
-                <ion-select-option value="snes">Kantō</ion-select-option>
-                <ion-select-option value="snes">Delhi</ion-select-option>
-              </ion-select>
-            </ion-item> --> 
           </ion-list>
         </ion-col>
       </ion-row>

@@ -1,7 +1,7 @@
 <ion-header class="ion-no-border">
   <ion-toolbar color="primary">
     <ion-title class="ion-text-center">
-     Accueil
+      Accueil
     </ion-title>
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
@@ -14,14 +14,29 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="ion-no-border ion-padding  ">
 
-  <ion-card class="bg-white">
- 
-    <ion-label expand="full"  >
-     Votre solde
-    </ion-label>
+
+  <ion-card style="border-raduis :50px;    margin: 150px auto;
+  float: none;
+  margin-bottom: 24px;
+" align="center" class="ion-margin-horizontal ion-margin-bottom">
+    <ion-card-header>
+      <div align="center">
+      <ion-avatar>
+        <img [src]="actif.photo" *ngIf="actif.photo"/>
+        <img src="../../assets/imgs/2.png" *ngIf="!actif.photo" />
+      </ion-avatar>
+    </div>
+      <ion-card-subtitle></ion-card-subtitle>
+      <ion-card-title>{{this.actif.first_name}} {{this.actif.last_name}}</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+     votre solde : {{this.actif.solde}} DT
+    </ion-card-content>
   </ion-card>
+
 
 
 

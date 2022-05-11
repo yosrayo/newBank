@@ -4,7 +4,8 @@
       <ion-list class="ion-text-center main-header">
         <div align="center">
           <ion-avatar>
-            <img [src]="actif.photo" />
+            <img [src]="actif.photo" *ngIf="actif.photo"/>
+            <img src="../../assets/imgs/2.png" *ngIf="!actif.photo" />
           </ion-avatar>
           <ion-label color="white">
             {{actif.first_name}} {{actif.last_name}}

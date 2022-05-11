@@ -47,7 +47,7 @@ export class FacturePage implements OnInit {
       cssClass: 'my-custom-class',
     
       header: 'Pour Confirmer la facture',
-      message:'Vous allez effectuer une facture à ****  . Le montant ** DT. Merci d"entrez votre code confidentiel ',
+      message:'Vous allez effectuer une facture à '+this.organizationTo+' . Le montant' +this.amount +'DT. Merci d"entrez votre code confidentiel ',
      
       buttons: [
         {
@@ -61,10 +61,10 @@ export class FacturePage implements OnInit {
         {
           text: 'Confirmer',
           handler: () => {
-           // this.facture.organizationTo= this.organizationTo
-            this.facture.actionType="Paiement_FACTURE";
-            this.facture.amount=this.amount;
-            this.facture.reference=this.reference;
+           //this.facture.organizationTo= Number(this.organizationTo)
+            this.facture.action_type="Paiement_FACTURE";
+            this.facture.amount=Number(this.amount);
+            this.facture.payed=1;
             this.actionService.payFacture( this.id,this.reference,this.facture)
             .subscribe(
               res => {

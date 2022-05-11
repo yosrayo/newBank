@@ -10,7 +10,7 @@
         </ion-icon>
           <ion-input  class="form-control"
         id="firstName" name="firstName"  
-        placeholder="entrer votre Nom"  [(ngModel)]="user.firstName"
+        placeholder="entrer votre Nom"  [(ngModel)]="user.first_name"
          #firstName="ngModel" required>
         </ion-input>
       </ion-item>
@@ -28,7 +28,7 @@
         <ion-input  class="form-control"
           placeholder="Enter Prenom"
           id="lastName" name="lastName"  
-           [(ngModel)]="user.lastName"
+           [(ngModel)]="user.last_name"
            #lastName="ngModel" required>
         </ion-input>
       </ion-item>
@@ -63,7 +63,7 @@
      
         <ion-input  class="form-control" type="date"
       id="birthDate" name="birthDate"  
-      placeholder="entrer votre date de naissance"  [(ngModel)]="user.birthDate"
+      placeholder="entrer votre date de naissance"  [(ngModel)]="user.birth_date"
        #birthDate="ngModel" required>
       </ion-input>
     </ion-item>
@@ -111,6 +111,26 @@
       *ngIf="f.submitted && !phone.valid"  >
       <p class="error">*Please enter proper Email Address</p>
     </ion-text>
+
+
+    <ion-item class="ion-margin-vertical">
+      <ion-label color="dark">Type compte</ion-label>
+      <ion-select   placeholder="Entrez city" id="city" name="city"  
+        [(ngModel)]="user.city"
+       #accountType="ngModel" required   >
+       <div *ngFor="let item of listCity">
+        <ion-select-option  value="{{item}}">{{item}}</ion-select-option>
+      </div>
+    
+      </ion-select>
+    </ion-item>
+    <ion-text 
+      class="ion-text-left"
+      color="danger"
+      *ngIf="f.submitted && !accountType.valid"  >
+      <p class="error">*Nom obligatoir</p>
+    </ion-text>
+
       <ion-item class="ion-margin-vertical">
         <ion-icon 
           name="mail-outline" slot="end" color="medium">

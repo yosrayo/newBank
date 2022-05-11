@@ -48,7 +48,7 @@ export class OtpComponent implements OnInit {
     this.dataRegister2 = this.share.dataRegister2
     console.log("data 1", this.dataRegister1)
     console.log("data 2", this.dataRegister2)
-    this.route.navigate(['/','home']);
+    this.route.navigate(['/','login']);
 
 
     this.finalData = Object.assign(this.dataRegister1, this.dataRegister2)
