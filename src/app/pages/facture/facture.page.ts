@@ -29,10 +29,12 @@ export class FacturePage implements OnInit {
   sld: any;
   code: any;
   u = {} as any;
+  factureRef = {} as any;
   constructor( private  router:  Router , 
     private alertController : AlertController , 
     private actionService : ActionService,
-    private userService : UserService
+    private userService : UserService ,
+    private factureService : FactureService
     ) { }
 
   ngOnInit() {
@@ -45,9 +47,11 @@ export class FacturePage implements OnInit {
       console.log("new user " , this.u.solde)
       this.sld=this.u.solde;
       this.code= this.u.conf_code
-      
-    });
 
+    
+    });
+   /// get facture 
+ 
     const data = this.router.url.split('/');
     console.log(data);
     if(data[1] == 'home') this.back = true;
@@ -56,7 +60,13 @@ export class FacturePage implements OnInit {
  
 
 
-  async valider0() {
+  async valider() {
+    this.factureService.getFactureByRef(this.reference).subscribe((res) => {
+      this.factureRef = res;
+      console.log("facture " , this.factureRef)
+  
+    });
+  ////
     const alert = await this.alertController.create({
       cssClass: 'my-custom-class',
 
@@ -104,7 +114,17 @@ export class FacturePage implements OnInit {
               });
           
               await alert.present();
-            }else  {
+            }else if(this.factureRef == null || this.factureRef.payed== 1){
+
+            
+              const alert = await this.alertController.create({
+                cssClass: 'my-custom-class',
+                message: 'Référence Non trouvable',
+                buttons: ['Cancel']
+              });
+              await alert.present();
+             
+            } else{
               this.facture.action_type="Paiement_FACTURE";
             this.facture.amount=Number(this.amount);
             this.facture.payed=1;

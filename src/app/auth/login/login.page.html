@@ -4,15 +4,10 @@
 
   
 
-<ion-content [fullscreen]="true" align="center">
-  <ion-label  >
-    <ion-img src="../../assets/imgs/logo.png" style="margin-left: auto;margin-right:auto; margin-top:10%;height: 150px; width: 150px;"   ></ion-img>
-    <ion-text >Content de vous revoir,</ion-text> 
-    <ion-text align="center">
-      <p>S'authentifier!</p>
-    </ion-text>
-  </ion-label> 
-  
+<ion-content [fullscreen]="true">
+
+    <ion-img src="../../assets/imgs/logo.png" style="margin-left: auto;margin-right:auto; margin-top:10%;height: 150px; width: 150px;" ></ion-img>
+ 
     <form name="form-signin" (ngSubmit)="f.form.valid && login()" #f="ngForm" novalidate  >
       <ion-list lines="none" class="ion-margin ion-padding ion-text-center">
         <ion-item class="ion-margin-vertical">

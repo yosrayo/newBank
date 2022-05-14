@@ -4,6 +4,7 @@ import { AlertController, LoadingController, ToastController } from '@ionic/angu
 import jsQR from "jsqr";
 import { Action } from 'src/app/classes/action';
 import { ActionService } from 'src/app/services/action.service';
+import { FactureService } from 'src/app/services/facture.service';
 import { UserService } from 'src/app/services/user.service';
 @Component({
   selector: 'app-scan-pay',
@@ -32,13 +33,14 @@ export class ScanPayPage implements OnInit {
   u = {} as any;
 
   action: Action = new Action();
-  
+  factureRef = {} as any;
   constructor(private toastCtrl: ToastController,
     private loadingCtrl: LoadingController,
     public router: Router,
     private alertController : AlertController , 
     private actionService : ActionService,
-    private userService: UserService
+    private userService: UserService ,
+    private factureService : FactureService
     ) { }
 
   ngOnInit(): void {
@@ -152,6 +154,12 @@ export class ScanPayPage implements OnInit {
 
  
   async valider() {
+
+    this.factureService.getFactureByRef(this.reference).subscribe((res) => {
+      this.factureRef = res;
+      console.log("facture " , this.factureRef)
+  
+    });
     const alert = await this.alertController.create({
       cssClass: 'my-custom-class',
 
@@ -199,6 +207,16 @@ export class ScanPayPage implements OnInit {
               });
           
               await alert.present();
+            }else if(this.factureRef == null || this.factureRef.payed== 1){
+
+            
+              const alert = await this.alertController.create({
+                cssClass: 'my-custom-class',
+                message: 'Référence Non trouvable',
+                buttons: ['Cancel']
+              });
+              await alert.present();
+             
             }else  {
               this.action.action_type="Paiement_FACTURE";
             this.action.amount=Number(this.amount);
