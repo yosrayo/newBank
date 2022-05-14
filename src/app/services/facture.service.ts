@@ -43,4 +43,8 @@ export class FactureService {
     );
   }
 
+
+  getFactureByRef(ref:number){
+    return this.http.get(this.factureUrl+'/findAll/'+ref)
+  }
 }
