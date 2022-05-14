@@ -30,6 +30,10 @@ export class UserService {
   constructor(private http: HttpClient) { }
 
 
+  getUserId(id:number){
+    return this.http.get(this.UsersUrl+'findUser/'+id)
+  }
+
   getUser (email:String, mdp:String): Observable<User[]> {
     return this.http.get<User[]>(this.UsersUrl+'authentify/'+email+'/'+mdp).pipe(
       tap(_ => console.log('fetched Users')),

@@ -39,7 +39,7 @@ export class ActionService {
 
 
     add(userFrom:number , userTo : number, action: Action): Observable<any> {
-      return this.http.post<Action>(this.actionUrl +'addAction/' + userFrom +'/' +userTo , action, httpOptions).pipe(
+      return this.http.post<Action>(this.actionUrl +'virement/' + userFrom +'/' +userTo , action, httpOptions).pipe(
         tap((newAction: Action) => console.log(`added user w/ id=${newAction.idAction}`)),
         catchError(this.handleError<Action>('create'))
       );

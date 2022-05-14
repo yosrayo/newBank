@@ -7,30 +7,20 @@ import { AppRoutingModule } from './app-routing.module';
 import { QRScanner } from '@ionic-native/qr-scanner/ngx';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { environment } from '../environments/environment';
-import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
-
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { provideAuth,getAuth } from '@angular/fire/auth';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
+import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { AngularFireStorage } from '@angular/fire/compat/storage';
 
 import { QRCodeModule } from 'angularx-qrcode';
-import { RowPipe } from './row.pipe';
-import { NgOtpInputModule } from  'ng-otp-input';
+import { AngularFireModule } from '@angular/fire/compat';
+import {AngularFireStorageModule} from "@angular/fire/compat/storage";
 
 
-import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
-import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
-import { AngularFireModule } from "@angular/fire/compat";
-
-
-
-import {
-  AngularFireStorageModule,
-  AngularFireStorageReference,
-  AngularFireUploadTask,
-  //StorageBucket
-} from "@angular/fire/compat/storage";
 @NgModule({
-  declarations: [AppComponent, RowPipe],
+  declarations: [AppComponent],
   entryComponents: [],
   imports: [BrowserModule,
      IonicModule.forRoot(),
@@ -40,16 +30,18 @@ import {
       provideFirebaseApp(() => initializeApp(environment.firebase)), 
       provideAuth(() => getAuth()), 
       provideFirestore(() => getFirestore()),
-      AngularFireDatabaseModule,
       AngularFirestoreModule,
       AngularFireStorageModule,
-      AngularFireModule.initializeApp(environment.firebase, "cloud")
-
-     
+      AngularFireDatabaseModule,
+      AngularFireModule.initializeApp(environment.firebase),
       
+      
+     
+
           
  ],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, QRScanner , RowPipe ,NgOtpInputModule ],
+
+  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, QRScanner  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

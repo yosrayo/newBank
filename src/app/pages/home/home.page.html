@@ -24,16 +24,16 @@
     <ion-card-header>
       <div align="center">
       <ion-avatar>
-        <img [src]="actif.photo" *ngIf="actif.photo"/>
-        <img src="../../assets/imgs/2.png" *ngIf="!actif.photo" />
+        <img [src]="u.photo" *ngIf="u.photo"/>
+        <img src="../../assets/imgs/2.png" *ngIf="!u.photo" />
       </ion-avatar>
     </div>
       <ion-card-subtitle></ion-card-subtitle>
-      <ion-card-title>{{this.actif.first_name}} {{this.actif.last_name}}</ion-card-title>
+      <ion-card-title>{{u.first_name}} {{u.last_name}}</ion-card-title>
     </ion-card-header>
 
     <ion-card-content>
-     votre solde : {{this.actif.solde}} DT
+     votre solde : {{u.solde}} DT
     </ion-card-content>
   </ion-card>
 
