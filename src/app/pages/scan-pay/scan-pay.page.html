@@ -20,10 +20,10 @@
           </div>
           <div padding>
             <ion-item>
-              <ion-input name="amount" type="text" placeholder="amount" [(ngModel)]="amount" required></ion-input>
+              <ion-input name="amount" type="text" placeholder="Montant en Dinars" [(ngModel)]="amount" required></ion-input>
             </ion-item>
             <ion-item>
-              <ion-input name="reference" type="text" placeholder="reference" [(ngModel)]="reference" required>{{scanResult}}</ion-input>
+              <ion-input name="reference" type="text" placeholder="Reference" [(ngModel)]="reference" required>{{scanResult}}</ion-input>
             </ion-item>
           </div>
           <div padding>
@@ -33,7 +33,7 @@
       </ion-row>
     </ion-grid>
   </form>
-  <ion-button shape="round"  (click)="startScan()">
+  <ion-button  shape="round"  (click)="startScan()" style="margin-left: auto; margin-right: auto; display:block;">
     Scanner
   </ion-button>
 
@@ -46,7 +46,7 @@
 
   <ion-button expand="full" (click)="stopScan()" color="danger" *ngIf="scanActive">
     <ion-icon slot="start" name="close"></ion-icon>
-    stop Scan
+    Arreter la recherche
   </ion-button>
   <ion-card *ngIf="scanResult">
     <ion-card-header>

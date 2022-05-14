@@ -45,8 +45,8 @@ export class RechargePage implements OnInit {
     const alert = await this.alertController.create({
       cssClass: 'my-custom-class',
     
-      header: 'Pour Confirmer le transfer',
-      message:'Vous allez effectuer une recharge téléphonique d"un montant ****DT vers **** <br>. Merci d"entrez votre code confidentiel',
+      header: 'Pour Confirmer le transfert',
+      message:'Vous allez effectuer une recharge téléphonique d"un montant ****TND vers **** .<br>Merci d"entrez votre code confidentiel',
       inputs: [
         {
           name: 'code',

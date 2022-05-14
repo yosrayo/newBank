@@ -7,7 +7,7 @@
     <ion-toolbar>
       <ion-buttons slot="start">
         <ion-back-button defaultHref="/register" ></ion-back-button>
-        <ion-text>Inscription etape 2</ion-text>
+        <ion-text style="margin-left:70px;">Inscription Etape 2/2</ion-text>
       </ion-buttons>
     </ion-toolbar>
   </ion-header>
@@ -18,9 +18,9 @@
     <ion-list lines="none" class="ion-margin ion-text-center">
     
       <ion-item class="ion-margin-vertical">
-        <ion-label color="dark">Bank</ion-label>
-        <ion-select      placeholder="Entrez bank" id="bank" name="bank"  
-        placeholder="entrer votre Nom"  [(ngModel)]="user.bank"
+        <ion-label color="dark">Banque</ion-label>
+        <ion-select       id="bank" name="bank"  
+          [(ngModel)]="user.bank"
          #city="ngModel" required >
           <ion-select-option value="BIAT">BIAT</ion-select-option>
           <ion-select-option value="STB">STB</ion-select-option>
@@ -32,15 +32,15 @@
         class="ion-text-left"
         color="danger"
         *ngIf="f.submitted && !city.valid"  >
-        <p class="error">*Nom obligatoir</p>
+        <p class="error">*Banque obligatoire/p>
       </ion-text>
   
 
       <ion-item class="ion-margin-vertical">
         <ion-label color="dark">Type compte</ion-label>
-        <ion-select   placeholder="Entrez bank" id="accountType" name="accountType"  
-        placeholder="entrer votre Nom"  [(ngModel)]="user.account_type"
-         #accountType="ngModel" required    placeholder="Enter ville" >
+        <ion-select    id="accountType" name="accountType"  
+          [(ngModel)]="user.account_type"
+         #accountType="ngModel" required  >
           <ion-select-option value="courant ">Courant </ion-select-option>
           <ion-select-option value="Epargne ">Epargne </ion-select-option>
       
@@ -50,18 +50,18 @@
         class="ion-text-left"
         color="danger"
         *ngIf="f.submitted && !accountType.valid"  >
-        <p class="error">*Nom obligatoir</p>
+        <p class="error">*Type de compte obligatoire</p>
       </ion-text>
 
 
 
       <ion-item class="ion-margin-vertical">
         <ion-label color="dark">Type de travail</ion-label>
-        <ion-select    placeholder="Entrez bank" id="city" name="workType"  
-        placeholder="entrer votre Nom"  [(ngModel)]="user.work_type"
-         #workType="ngModel" required     placeholder="Enter ville" >
-          <ion-select-option value="public ">public </ion-select-option>
-          <ion-select-option value="privé ">privé </ion-select-option>
+        <ion-select    id="city" name="workType"  
+         [(ngModel)]="user.work_type"
+         #workType="ngModel" required      >
+          <ion-select-option value="public">Publique </ion-select-option>
+          <ion-select-option value="privé ">Privé </ion-select-option>
       
         </ion-select>
       </ion-item>
@@ -69,7 +69,7 @@
       class="ion-text-left"
       color="danger"
       *ngIf="f.submitted && !workType.valid"  >
-      <p class="error">*Nom obligatoir</p>
+      <p class="error">*Type de travail obligatoire</p>
     </ion-text>
 
 

@@ -47,7 +47,7 @@ export class FacturePage implements OnInit {
       cssClass: 'my-custom-class',
     
       header: 'Pour Confirmer la facture',
-      message:'Vous allez effectuer une facture à '+this.organizationTo+' . Le montant' +this.amount +'DT. Merci d"entrez votre code confidentiel ',
+      message:'Vous allez effectuer une facture à '+this.organizationTo+' . Le montant' +this.amount +'TND. Merci d"entrez votre code confidentiel ',
      
       buttons: [
         {

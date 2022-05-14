@@ -4,12 +4,12 @@
 
   
 
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" align="center">
   <ion-label  >
-    <ion-img src="../../assets/imgs/logo.png" style="height: 150px; width: 150px; align-items: center;"  ></ion-img>
-    <ion-text >Welcome Back,</ion-text> 
-    <ion-text >
-      <p>Log In!</p>
+    <ion-img src="../../assets/imgs/logo.png" style="margin-left: auto;margin-right:auto; margin-top:10%;height: 150px; width: 150px;"   ></ion-img>
+    <ion-text >Content de vous revoir,</ion-text> 
+    <ion-text align="center">
+      <p>S'authentifier!</p>
     </ion-text>
   </ion-label> 
   
@@ -21,7 +21,7 @@
           </ion-icon>
             <ion-input  class="form-control"
           id="username" name="username"  
-          placeholder="entrer votre email"  [(ngModel)]="username" required>
+          placeholder="Saisir votre pseudonyme"  [(ngModel)]="username" required>
           </ion-input>
         </ion-item>
        
@@ -32,7 +32,7 @@
           </ion-icon>
          
           <ion-input 
-          type="password" class="form-control" id="pwd" name="pwd"  placeholder="entrer votre moy de passe"
+          type="password" class="form-control" id="pwd" name="pwd"  placeholder="Saisir votre mot de passe"
           [(ngModel)]="pwd" required  >
           </ion-input>
         </ion-item>
@@ -41,19 +41,19 @@
           <ion-col size="6" class="alignItems">
             <div align=left>
               <ion-checkbox></ion-checkbox>
-              <ion-note>Remember me</ion-note>
+              <ion-note>Souvenez-toi de moi</ion-note>
             </div>
           </ion-col>
           <ion-col size="6">
             <div align=right>
-              <ion-note [routerLink]="['/', 'forget-pass']">Forgot password?</ion-note>
+              <ion-note [routerLink]="['/', 'forget-pass']">Oublié mot de passe?</ion-note>
             </div>
           </ion-col>
         </ion-row>
-        <ion-button color="primary" shape="round" type="submit">Log In</ion-button>
+        <ion-button color="primary" shape="round" type="submit">S'authetifier</ion-button>
         <p class="signup">
           <ion-note>
-            Not a member yet? <ion-text  color="primary" [routerLink]="['/', 'register']">Sign Up</ion-text>
+            Pas encore membre? <ion-text  color="primary" [routerLink]="['/', 'register']">S'inscrire</ion-text>
           </ion-note>
         </p>
       </ion-list>

@@ -14,36 +14,36 @@
     <ion-row>
       <ion-col col-4>
         <ion-card text-center padding >
-          <h2>1 DT</h2>
+          <h2>1 TND</h2>
         </ion-card>
       </ion-col>
 
       <ion-col col-4>
         <ion-card text-center padding >
        
-          <h2>5 DT</h2>
+          <h2>5 TND</h2>
         </ion-card>
       </ion-col>
       <ion-col col-4>
         <ion-card text-center padding >
-          <h2>2 DT</h2>
+          <h2>2 TND</h2>
         </ion-card>
       </ion-col>
     </ion-row>
     <ion-row>
       <ion-col col-4>
         <ion-card text-center padding >
-          <h2>10 DT</h2>
+          <h2>10 TND</h2>
         </ion-card>
       </ion-col>
       <ion-col col-4>
         <ion-card text-center padding >
-          <h2>20 DT</h2>
+          <h2>20 TND</h2>
         </ion-card>
       </ion-col>
       <ion-col col-4>
         <ion-card text-center padding >
-          <h2>50 DT</h2>
+          <h2>50 TND</h2>
         </ion-card>
       </ion-col>
     </ion-row>
@@ -70,9 +70,9 @@
        
           <ion-item class="ion-margin-vertical">
             <ion-label color="dark">Operateur</ion-label>
-            <ion-select   formControlName="op"    placeholder="Entrer Operateur" >
+            <ion-select   formControlName="op"     >
               <ion-select-option value="Orange ">Orange </ion-select-option>
-              <ion-select-option value="Orange ">Orange Telecome </ion-select-option>
+              <ion-select-option value="Telecom ">Tunisie Telecome </ion-select-option>
               <ion-select-option value="Ooredoo ">Ooredoo </ion-select-option>
           
             </ion-select>
@@ -81,7 +81,7 @@
             class="ion-text-left"
             color="danger"
             *ngIf="!form.get('op').valid && form.get('op').touched">
-            <p class="error">*Please enter Username</p>
+            <p class="error">*S'il vous plait selectionner un opérateur</p>
           </ion-text>
 
 
@@ -89,7 +89,7 @@
             <ion-item>
               <ion-input 
                 formControlName="phone" 
-                placeholder="Mobile Number" 
+                placeholder="+216 XX XXX XXX" 
                 type="tel"
                 minlength="10"
                 maxlength="10"
@@ -98,7 +98,7 @@
             </ion-item>
             <ion-text *ngIf="!form.get('phone').valid && form.get('phone').touched">
               <ion-text class="error" *ngIf="form.get('phone').hasError('required')" color="danger">
-                * Please enter the Mobile Number
+                *Numero de telephone obligatoire
               </ion-text>
               <ion-text class="error" *ngIf="form.get('phone').hasError('minlength') 
                 && !form.get('phone').hasError('required')" color="danger">

@@ -46,7 +46,7 @@ export class MarchantPage implements OnInit {
       cssClass: 'my-custom-class',
     
       header: 'Pour Confirmer la facture',
-      message:'Vous allez effectuer une facture à ****  . Le montant ** DT. Merci d"entrez votre code confidentiel ',
+      message:'Vous allez effectuer une facture à ****  . Le montant ** TND. Merci d"entrez votre code confidentiel ',
       inputs: [
         {
           name: 'code',

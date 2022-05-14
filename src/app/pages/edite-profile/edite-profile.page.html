@@ -35,41 +35,41 @@
 
           <ion-list margin-bottom>
             <ion-list-header color="light">
-              <ion-label class="fw700">Edit Profile</ion-label>
+              <ion-label class="fw700">Modifier Profile</ion-label>
             </ion-list-header>
 
             <ion-item>
-              <ion-label color="dark" position="stacked">First Name:</ion-label>
-              <ion-input inputmode="text" placeholder="Ex..: Joe Doe" formControlName="firstName"  > </ion-input>
+              <ion-label color="dark" position="stacked">Prénom:</ion-label>
+              <ion-input inputmode="text"  formControlName="firstName"  > </ion-input>
             </ion-item>
 
             <ion-item>
-              <ion-label color="dark" position="stacked">Last Name:</ion-label>
+              <ion-label color="dark" position="stacked">Nom:</ion-label>
               <ion-input inputmode="text" placeholder="Ex..: Joe Doe" formControlName="lastName"  > </ion-input>
             </ion-item>
 
             <ion-item>
-              <ion-label color="dark" position="stacked">Email:</ion-label>
+              <ion-label color="dark" position="stacked">E-mail:</ion-label>
               <ion-input inputmode="email" placeholder="Ex.: joe@doe.com" formControlName="mail" ></ion-input>
             </ion-item>
 
             <ion-item>
-              <ion-label color="dark" position="stacked">Address:</ion-label>
+              <ion-label color="dark" position="stacked">Adresse:</ion-label>
               <ion-input inputmode="text" placeholder="Ex.: Abey Road 5"  formControlName="address"></ion-input>
             </ion-item>
 
             <ion-item>
-              <ion-label color="dark" position="stacked">phone:</ion-label>
+              <ion-label color="dark" position="stacked">Numéro téléphonique:</ion-label>
               <ion-input inputmode="text" placeholder="+216.."  formControlName="phone"></ion-input>
             </ion-item>
 
             <ion-item>
-              <ion-label color="dark" position="stacked">Mot de pass:</ion-label>
-              <ion-input type="password" placeholder="*****"  formControlName="pwd"></ion-input>
+              <ion-label color="dark" position="stacked">Mot de passe:</ion-label>
+              <ion-input type="password" placeholder="********"  formControlName="pwd"></ion-input>
             </ion-item>
 
             <ion-item>
-              <ion-label color="dark">City</ion-label>
+              <ion-label color="dark">Ville:</ion-label>
               <ion-select  formControlName="city">
                 <div *ngFor="let item of listCity">
                   <ion-select-option  value="{{item}}">{{item}}</ion-select-option>
@@ -80,7 +80,7 @@
         </ion-col>
       </ion-row>
     </ion-grid>
-    <ion-button size="large" expand="full" color="dark"  (click)="update(currentUser.username)" [disabled]="!ngForm.valid" no-margin>Edit</ion-button>
+    <ion-button size="large" expand="full" color="dark"  (click)="update(currentUser.username)" [disabled]="!ngForm.valid" no-margin>Modifier</ion-button>
   </ion-card>
   </form>
 </ion-content>

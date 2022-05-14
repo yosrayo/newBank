@@ -14,10 +14,10 @@ export class AppComponent {
     {title: 'Accueil', url: '/home', icon: 'home'},
     {title: 'Compte', url: '/profile', icon: 'person-circle'},
     {title: 'Recharge telephonique', url: '/recharge', icon: 'phone-portrait'},
-    {title: 'transfert dargent', url: '/transfert', icon: 'cash'},
-    {title: 'paiment marchant', url: '/marchant', icon: 'wallet', },
-    {title: 'paiment facture', url: '/facture', icon: 'newspaper',},
-    {title: 'Scanner et payement', url: '/scan-pay', icon: 'scan-circle', },
+    {title: 'Transfert d\'argent', url: '/transfert', icon: 'cash'},
+    {title: 'Paiment Marchant', url: '/marchant', icon: 'wallet', },
+    {title: 'Paiment Facture', url: '/facture', icon: 'newspaper',},
+    {title: 'Scanner et Payer', url: '/scan-pay', icon: 'scan-circle', },
   ];
 
   constructor( private router : Router) {}

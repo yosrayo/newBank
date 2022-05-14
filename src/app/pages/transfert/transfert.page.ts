@@ -41,8 +41,8 @@ export class TransfertPage implements OnInit {
     const alert = await this.alertController.create({
       cssClass: 'my-custom-class',
     
-      header: 'Pour Confirmer le transfer',
-      message:'Vous allez effectuer un montant '+this.amount +'DT vers' + this.idPaiement + '<br>. Merci d"entrez votre code confidentiel',
+      header: 'Pour Confirmer le transfert',
+      message:'Vous allez effectuer un montant '+this.amount +'TND vers' + this.idPaiement + '.<br>Merci d"entrez votre code confidentiel',
      
       buttons: [
         {
