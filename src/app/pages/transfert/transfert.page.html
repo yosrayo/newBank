@@ -1,7 +1,7 @@
 
 
 <ion-header>
-  <ion-toolbar >
+  <ion-toolbar color="primary" >
     <ion-buttons slot="start">
      <ion-menu-button *ngIf="back"></ion-menu-button>
      <ion-back-button *ngIf="!back" defaultHref="/home"></ion-back-button>
@@ -10,7 +10,7 @@
   </ion-toolbar>
 </ion-header>
 <ion-content class="ion-no-border ion-padding">
-  <form #form="ngForm" (ngSubmit)="valider()">
+  <form #form="ngForm" (ngSubmit)="valider0()">
     <ion-grid>
       <ion-row color="primary" justify-content-center>
         <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
@@ -20,7 +20,7 @@
           <div padding>
         
             <ion-item>
-              <ion-input name="amount" type="text" placeholder="Montant en Dinars"   [(ngModel)]="montant.amount"  required></ion-input>
+              <ion-input name="amount" type="text" placeholder="Montant en Dinars"   [(ngModel)]="amount"  required></ion-input>
             </ion-item>
             <ion-item>
               <ion-input name="idPaiement" type="text" placeholder="Id Paiement distinataire"  [(ngModel)]="idPaiement" required></ion-input>

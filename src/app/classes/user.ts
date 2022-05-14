@@ -316,7 +316,7 @@ export class User {
     city : string;
     work_type : string;
     account_type : string;
-	idPaiement : number;
+	id_paiement : number;
 	bank : string;
 	photo : string;
 	username : string;

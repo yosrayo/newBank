@@ -1,5 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import Chart from 'chart.js/auto';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-home',
@@ -15,11 +16,24 @@ export class HomePage implements OnInit {
   lineChart: any;
   newHeight = 0;
   actif = {} as any ;
-  constructor() {}
+  u = {} as any;
+  id: any;
+  sld: any;
+
+  constructor( private userService : UserService) {}
 
   ngOnInit() {
-    console.log('ngOnInit');
     this.actif = JSON.parse(localStorage.getItem('user'));
+    this.id = this.actif.id_user
+
+    this.userService.getUserId(this.id).subscribe((res) => {
+      this.u = res;
+      console.log("new user " , this.u.solde)
+      this.sld=this.u.solde;
+      
+    });
+    console.log('ngOnInit');
+   
 
   }
 

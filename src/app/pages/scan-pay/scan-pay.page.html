@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-buttons slot="start">
       <ion-menu-button *ngIf="back"></ion-menu-button>
       <ion-back-button *ngIf="!back" defaultHref="/home"></ion-back-button>
@@ -11,7 +11,7 @@
 
 <ion-content class="ion-no-border ion-padding center">
 
-  <form #form="ngForm" (ngSubmit)="valid()">
+  <form #form="ngForm" (ngSubmit)="valider()">
     <ion-grid>
       <ion-row color="primary" justify-content-center>
         <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
