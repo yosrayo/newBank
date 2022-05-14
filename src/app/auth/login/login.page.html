@@ -5,14 +5,9 @@
   
 
 <ion-content [fullscreen]="true">
-  <ion-label  >
+
     <ion-img src="../../assets/imgs/logo.png" style="height: 150px; width: 150px; align-items: center;"  ></ion-img>
-    <ion-text >Welcome Back,</ion-text> 
-    <ion-text >
-      <p>Log In!</p>
-    </ion-text>
-  </ion-label> 
-  
+ 
     <form name="form-signin" (ngSubmit)="f.form.valid && login()" #f="ngForm" novalidate  >
       <ion-list lines="none" class="ion-margin ion-padding ion-text-center">
         <ion-item class="ion-margin-vertical">

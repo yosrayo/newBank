@@ -3,10 +3,8 @@
 
   <ion-label class="welcomeMessage" >
     <ion-img src="../../assets/imgs/logo.png" style="height: 100px; width: 100px;" align="center" ></ion-img>
-    <ion-text color="light">Welcome Back,</ion-text> 
-    <ion-text >
-      <p>Log In!</p>
-    </ion-text>
+  
+
   </ion-label> 
 
   <form name="form-signin" (ngSubmit)="f.form.valid && reset()" #f="ngForm" novalidate >
@@ -18,14 +16,14 @@
         </ion-icon>
           <ion-input  class="form-control"
         id="username" name="username"  [(ngModel)]="username"
-        placeholder="hhhhh "  required>
+        placeholder="Entrer userName "  required>
         </ion-input>
       </ion-item>
       <ion-item class="ion-margin-vertical">
         <ion-icon 
           name="lock-closed-outline" slot="end" color="medium">
         </ion-icon>
-          <ion-input  class="form-control"
+          <ion-input  class="form-control" type="password"
         id="pwd" name="pwd"  [(ngModel)]="newpass"
         placeholder="entrer votre nouveau mot de passe "  required>
         </ion-input>
