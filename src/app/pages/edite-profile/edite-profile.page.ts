@@ -86,14 +86,28 @@ export class EditeProfilePage implements OnInit {
 validators()
 {
   this.ngForm = new FormGroup({
-    firstName: new FormControl(this.currentUser.first_name, Validators.required), 
-    lastName: new FormControl(this.currentUser.last_name, Validators.required), 
+    first_name: new FormControl(this.currentUser.first_name, Validators.required), 
+    last_name: new FormControl(this.currentUser.last_name, Validators.required), 
     city: new FormControl(this.currentUser.city, Validators.required),   
     phone: new FormControl(this.currentUser.phone, Validators.required), 
     mail: new FormControl(this.currentUser.mail, Validators.required), 
     pwd:new FormControl('', Validators.required), 
     address:new FormControl(this.currentUser.address, Validators.required), 
     photo:new FormControl('', Validators.required), 
+    id_user: new FormControl(this.currentUser.id_user,),
+    username: new FormControl(this.currentUser.username,),
+    conf_code: new FormControl(this.currentUser.conf_code,),
+    work_type: new FormControl(this.currentUser.work_type,),
+    account_type: new FormControl(this.currentUser.account_type,),
+    id_paiement: new FormControl(this.currentUser.id_paiement,),
+    birth_date: new FormControl(this.currentUser.birth_date,),
+    bank: new FormControl(this.currentUser.bank,),
+    governorate: new FormControl(this.currentUser.governorate,),
+    solde: new FormControl(this.currentUser.solde,),
+    verified: new FormControl(this.currentUser.verified,),
+
+
+
 
   });
   
@@ -125,27 +139,16 @@ validators()
   }
 
 
-  update(currentUserId) {
-    console.log("current user to update",currentUserId)
+  update() {
+   // console.log("current user to update",currentUserId)
     console.log("form  user to update",this.ngForm.value)
-
-
-
-     this.userService.updateUser( this.ngForm.value,currentUserId)
+     this.userService.update(this.ngForm.value)
       .subscribe((res) => {
         //this.u = res;
         this.router.navigate(['/home']);
         //localStorage.setItem("user", JSON.stringify(this.u));
-     this.currentUser.first_name= this.ngForm.controls['firstName'].value;
-     this.currentUser.last_name= this.ngForm.controls['lastName'].value;
-     this.currentUser.phone= this.ngForm.controls['phone'].value;
-     this.currentUser.mail= this.ngForm.controls['mail'].value;
-     this.currentUser.pwd= this.ngForm.controls['pwd'].value;
-     this.currentUser.address= this.ngForm.controls['address'].value;
-     this.currentUser.photo= this.ngForm.controls['photo'].value;
-     this.currentUser.city= this.ngForm.controls['city'].value;
-     console.log("current user after  update",this.currentUser)
-     localStorage.setItem("user",JSON.stringify(this.currentUser));
+     console.log("current user after  update",this.ngForm.value)
+     localStorage.setItem("user",JSON.stringify(this.ngForm.value));
      alert("update avec succés");
 
 
@@ -185,5 +188,3 @@ validators()
     
 
 }
-
-

@@ -55,7 +55,17 @@ export class UserService {
     );
   }
 
-  updateUser(user: any,username:any ): Observable<User> {
+  update(user: any): Observable<any> {
+    return this.http.post<any>('http://localhost:8089/ddops/user/updateProfile', user).pipe(
+      tap((newUser: User) => console.log(`added user w/ id=${newUser.id}`)),
+      catchError(this.handleError<User>('create'))
+    );
+  }
+
+
+  
+
+  updateUser(username:any ,user: User ): Observable<User> {
     return this.http.put<User>(this.UsersUrl +'updateUser/' +username, user, httpOptions).pipe(
       tap((newUser: any) => console.log(`updeted user w/ id=${newUser.userName}`)),
       catchError(this.handleError<User>('create'))

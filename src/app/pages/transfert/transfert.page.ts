@@ -58,7 +58,7 @@ export class TransfertPage implements OnInit {
       inputs: [
         {
           name: 'code',
-          type: 'text',
+          type: 'password',
           placeholder: 'Entrer votre code confidentiel',
 
         }
@@ -77,13 +77,26 @@ export class TransfertPage implements OnInit {
         },
         {
           text: 'Confirmer',
-          handler: () => {
-            console.log("tttttttttt", this.montant)
+          handler: async (inputs: { code: string }) => {
+            console.log("soldeeeeee", this.amount)
+            if (inputs.code == null || inputs.code==""  || inputs.code !=this.code ) {
+              const alert = await this.alertController.create({
+                cssClass: 'my-custom-class',
+                message: 'Verifier votre code.',
+                buttons: ['Cancel']
+              });
+          
+              await alert.present();
+            }else if(this.sld< this.amount) {
 
-            if (this.amount > this.sld) {
-              console.log("hfhhfhhh")
-
-            } else {
+              const alert = await this.alertController.create({
+                cssClass: 'my-custom-class',
+                message: 'solde insuffisant.',
+                buttons: ['Cancel']
+              });
+          
+              await alert.present();
+            }else  {
               this.montant.action_type = "Virement_BANCAIRE"
               this.actionService.sendMoney(this.id, this.idPaiement, this.montant)
                 .subscribe(
@@ -94,8 +107,7 @@ export class TransfertPage implements OnInit {
                 );
 
             }
-          },
-
+          }
         },
       ],
     });
@@ -110,7 +122,6 @@ export class TransfertPage implements OnInit {
   async valider0() {
     const alert = await this.alertController.create({
       cssClass: 'my-custom-class',
-
       header: 'Pour Confirmer le transfer',
       message: 'Vous allez effectuer un montant ' + this.amount + 'DT vers' + this.idPaiement + '<br>. Merci d"entrez votre code confidentiel',
       inputs: [

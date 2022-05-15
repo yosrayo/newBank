@@ -40,12 +40,12 @@
 
             <ion-item>
               <ion-label color="dark" position="stacked">Prénom:</ion-label>
-              <ion-input inputmode="text"  formControlName="firstName"  > </ion-input>
+              <ion-input inputmode="text"  formControlName="first_name"  > </ion-input>
             </ion-item>
 
             <ion-item>
               <ion-label color="dark" position="stacked">Nom:</ion-label>
-              <ion-input inputmode="text" placeholder="Ex..: Joe Doe" formControlName="lastName"  > </ion-input>
+              <ion-input inputmode="text" placeholder="Ex..: Joe Doe" formControlName="last_name"  > </ion-input>
             </ion-item>
 
             <ion-item>
@@ -80,7 +80,7 @@
         </ion-col>
       </ion-row>
     </ion-grid>
-    <ion-button size="large" expand="full" color="dark"  (click)="update(currentUser.username)"  no-margin>Modifer</ion-button>
+    <ion-button size="large" expand="full" color="dark"  (click)="update()"  no-margin>Modifer</ion-button>
   </ion-card>
   </form>
 </ion-content>
