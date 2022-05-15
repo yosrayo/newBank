@@ -30,6 +30,7 @@ export class FacturePage implements OnInit {
   code: any;
   u = {} as any;
   factureRef = {} as any;
+  mnt: any;
   constructor( private  router:  Router , 
     private alertController : AlertController , 
     private actionService : ActionService,
@@ -47,11 +48,9 @@ export class FacturePage implements OnInit {
       console.log("new user " , this.u.solde)
       this.sld=this.u.solde;
       this.code= this.u.conf_code
-
-    
     });
-   /// get facture 
- 
+
+
     const data = this.router.url.split('/');
     console.log(data);
     if(data[1] == 'home') this.back = true;
@@ -63,7 +62,8 @@ export class FacturePage implements OnInit {
   async valider() {
     this.factureService.getFactureByRef(this.reference).subscribe((res) => {
       this.factureRef = res;
-      console.log("facture " , this.factureRef)
+      console.log("facture by ref" , this.factureRef.amount)
+      this.mnt=this.factureRef.amount;
   
     });
   ////
@@ -124,6 +124,14 @@ export class FacturePage implements OnInit {
               });
               await alert.present();
              
+            } else if(this.mnt!=this.amount){
+ 
+              const alert = await this.alertController.create({
+                cssClass: 'my-custom-class',
+                message: 'Prix de facture non correcte',
+                buttons: ['Cancel']
+              });
+              await alert.present();
             } else{
               this.facture.action_type="Paiement_FACTURE";
             this.facture.amount=Number(this.amount);

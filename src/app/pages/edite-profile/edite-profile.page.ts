@@ -118,25 +118,6 @@ validators()
 
 
 
-  async sendData() {
-    const loader = await this.loadingCtrl.create({
-      duration: 2000
-    });
-
-    loader.present();
-    loader.onWillDismiss().then(async l => {
-      const toast = await this.toastCtrl.create({
-
-        cssClass: 'bg-profile',
-        message: 'Your Data was Edited!',
-        duration: 3000,
-        position: 'bottom'
-      });
-
-      toast.present();
-      this.navCtrl.navigateForward('/home-results');
-    });
-  }
 
 
   update() {
@@ -144,9 +125,7 @@ validators()
     console.log("form  user to update",this.ngForm.value)
      this.userService.update(this.ngForm.value)
       .subscribe((res) => {
-        //this.u = res;
         this.router.navigate(['/home']);
-        //localStorage.setItem("user", JSON.stringify(this.u));
      console.log("current user after  update",this.ngForm.value)
      localStorage.setItem("user",JSON.stringify(this.ngForm.value));
      alert("update avec succés");

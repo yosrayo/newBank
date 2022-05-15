@@ -97,6 +97,8 @@ export class TransfertPage implements OnInit {
           
               await alert.present();
             }else  {
+              console.log("gfd", this.montant)
+              this.montant.amount=this.amount;
               this.montant.action_type = "Virement_BANCAIRE"
               this.actionService.sendMoney(this.id, this.idPaiement, this.montant)
                 .subscribe(

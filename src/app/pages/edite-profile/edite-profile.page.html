@@ -14,7 +14,8 @@
       <div class="container">
         <div class="outer">
           <img [src]="currentUser.photo" *ngIf="currentUser.photo"/>
-          <img src="../../assets/imgs/2.png" *ngIf="!currentUser.photo" />          <div class="inner" style="background-color: black;">
+          <img src="../../assets/imgs/2.png" *ngIf="!currentUser.photo" />    
+                <div class="inner" style="background-color: black;">
             <label for="file">
               <ion-icon name="camera" class="camera-icon" ></ion-icon>
 
