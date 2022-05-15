@@ -62,7 +62,7 @@ export class FacturePage implements OnInit {
   async valider() {
     this.factureService.getFactureByRef(this.reference).subscribe((res) => {
       this.factureRef = res;
-      console.log("facture by ref" , this.factureRef.amount)
+     
       this.mnt=this.factureRef.amount;
   
     });
